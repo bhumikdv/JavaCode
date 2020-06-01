@@ -7,7 +7,7 @@ import fr.epita.covid19.patientinfo.datamodel.Patient;
 import fr.epita.covid19.patientinfo.services.PatientEncoder;
 
 public class TestConversionToDouble {
-	
+
 	public static void main(String[] args) {
 		PatientEncoder patientEncoder = new PatientEncoder();
 		Patient patient = new Patient();
@@ -16,14 +16,14 @@ public class TestConversionToDouble {
 		patient.setSex("male");
 		patient.setSymptomOnSetDate(new Date());
 		patient.setConfirmedDate(new Date());
+		patient.setState("released");
 		System.out.println(patient);
-		
+
 		Double[] doubleArray = patientEncoder.convertToDoubleArray(patient);
 		System.out.println(Arrays.asList(doubleArray));
-		
-		
+
 		System.out.println(patientEncoder.convertToPatient(doubleArray));
-		
+
 	}
 
 }

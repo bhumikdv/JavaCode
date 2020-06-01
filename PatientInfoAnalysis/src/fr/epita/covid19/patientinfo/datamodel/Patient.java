@@ -3,25 +3,33 @@ package fr.epita.covid19.patientinfo.datamodel;
 import java.util.Date;
 
 public class Patient {
-	
-	//age (determined by the combination of the "age" and "birth_year" columns)
+
+	// age (determined by the combination of the "age" and "birth_year" columns)
 	private Integer age;
-	
-	//sex
+
+	// sex
 	private String sex;
-	
-	//infectionCase
+
+	// infectionCase
 	private String infectionCase;
-	
-	//symptomOnsetDate
+
+	// symptomOnsetDate
 	private Date symptomOnSetDate;
-	
-	//confirmedDate
+
+	// confirmedDate
 	private Date confirmedDate;
 
-	
-	
-	
+	// state
+	private String state;
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
 	public Integer getAge() {
 		return age;
 	}
@@ -65,11 +73,7 @@ public class Patient {
 	@Override
 	public String toString() {
 		return "Patient [age=" + age + ", sex=" + sex + ", infectionCase=" + infectionCase + ", symptomOnSetDate="
-				+ symptomOnSetDate + ", confirmedDate=" + confirmedDate + "]";
+				+ symptomOnSetDate + ", confirmedDate=" + confirmedDate + ", state=" + state + "]";
 	}
-	
-	
-	
-	
 
 }

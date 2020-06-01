@@ -40,14 +40,15 @@ public class PatientCSVHandler {
 			patient.setSex(parts[2]);
 			patient.setInfectionCase(parts[9]);
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			if(!"".equals(parts[13].strip())) {
+			if (!"".equals(parts[13].strip())) {
 				patient.setSymptomOnSetDate(sdf.parse(parts[13]));
 			}
-			if (!"".equals(parts[14].strip())){
+			if (!"".equals(parts[14].strip())) {
 				patient.setConfirmedDate(sdf.parse(parts[14]));
 			}
+			patient.setState(parts[17]);
 			patients.add(patient);
-		
+
 		}
 		return patients;
 
@@ -58,12 +59,12 @@ public class PatientCSVHandler {
 		String ageApproximation = parts[4];
 		Integer age = null;
 		if ("".equals(birthYear.strip())) {
-			if ("".equals(ageApproximation.strip())){
+			if ("".equals(ageApproximation.strip())) {
 				System.out.println("missing value for age");
-			}else {
+			} else {
 				age = Integer.valueOf(ageApproximation.substring(0, 1));
 			}
-		}else {
+		} else {
 			Integer year = Integer.valueOf(birthYear);
 			Integer currentYear = Calendar.getInstance().get(Calendar.YEAR);
 			age = currentYear - year;
